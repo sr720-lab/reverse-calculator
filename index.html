@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Reverse Logic Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Calculator 🤪</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,59 +11,83 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #f0f0f0;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      transition: background 0.5s;
     }
     .calculator {
-      background: white;
+      background: #fff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 320px;
     }
     #display {
       width: 100%;
       height: 50px;
       font-size: 24px;
-      text-align: right;
+      text-align: center;
       padding: 5px;
       margin-bottom: 10px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
     }
     button {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       font-size: 20px;
       margin: 5px;
       cursor: pointer;
+      border-radius: 50%;
+      border: none;
+      transition: background 0.3s, transform 0.1s;
+      color: white;
+      font-weight: bold;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .digit { background: #4CAF50; }
+    .digit:nth-child(odd) { background: #2196F3; }
+    .operator { background: #FF5722; }
+    .clear { background: #9C27B0; }
+    .equal { background: #E91E63; }
+    .info {
+      font-size: 14px;
+      margin-top: 10px;
+      color: gray;
     }
   </style>
 </head>
 <body>
 
 <div class="calculator">
-  <input type="text" id="display" disabled>
+  <input type="text" id="display" disabled placeholder="Ready to confuse 🤓">
+  <div class="info" id="info"></div>
 
   <br>
-  <button onclick="appendNum('7')">7</button>
-  <button onclick="appendNum('8')">8</button>
-  <button onclick="appendNum('9')">9</button>
-  <button onclick="setOperation('+')">+</button>
+  <button class="digit" onclick="appendNum('7')">7️⃣</button>
+  <button class="digit" onclick="appendNum('8')">8️⃣</button>
+  <button class="digit" onclick="appendNum('9')">9️⃣</button>
+  <button class="operator" onclick="setOperation('+')">➕</button>
 
   <br>
-  <button onclick="appendNum('4')">4</button>
-  <button onclick="appendNum('5')">5</button>
-  <button onclick="appendNum('6')">6</button>
-  <button onclick="setOperation('-')">-</button>
+  <button class="digit" onclick="appendNum('4')">4️⃣</button>
+  <button class="digit" onclick="appendNum('5')">5️⃣</button>
+  <button class="digit" onclick="appendNum('6')">6️⃣</button>
+  <button class="operator" onclick="setOperation('-')">➖</button>
 
   <br>
-  <button onclick="appendNum('1')">1</button>
-  <button onclick="appendNum('2')">2</button>
-  <button onclick="appendNum('3')">3</button>
-  <button onclick="setOperation('')"></button>
+  <button class="digit" onclick="appendNum('1')">1️⃣</button>
+  <button class="digit" onclick="appendNum('2')">2️⃣</button>
+  <button class="digit" onclick="appendNum('3')">3️⃣</button>
+  <button class="operator" onclick="setOperation('*')">✖️</button>
 
   <br>
-  <button onclick="appendNum('0')">0</button>
-  <button onclick="clearDisplay()">C</button>
-  <button onclick="calculate()">=</button>
-  <button onclick="setOperation('/')">/</button>
+  <button class="digit" onclick="appendNum('0')">0️⃣</button>
+  <button class="clear" onclick="clearDisplay()">🧹</button>
+  <button class="equal" onclick="calculate()">🟰</button>
+  <button class="operator" onclick="setOperation('/')">➗</button>
 </div>
 
 <script>
@@ -69,6 +95,15 @@
   let secondNum = "";
   let operation = null;
   let enteringSecond = false;
+
+  const opsMap = {
+    '+': 'Subtract',
+    '-': 'Divide',
+    '*': 'Add',
+    '/': 'Multiply'
+  };
+
+  const emojis = ["😂", "🤯", "🥳", "😏", "🙃", "🌀"];
 
   function appendNum(num) {
     if (!enteringSecond) {
@@ -83,6 +118,8 @@
   function setOperation(op) {
     operation = op;
     enteringSecond = true;
+    document.getElementById("info").innerText = 
+      `You *think* you're doing "${op}", but actually it will ${opsMap[op]} 😈`;
   }
 
   function calculate() {
@@ -94,19 +131,25 @@
       res = "Error";
     } else {
       switch(operation) {
-        case '+': res = a - b; break; // "+" → subtract
-        case '-': res = b === 0 ? "Error" : a / b; break; // "-" → divide
-        case '': res = a + b; break; // "" → add
-        case '/': res = a * b; break; // "/" → multiply
+        case '+': res = a - b; break;
+        case '-': res = b === 0 ? "Error" : a / b; break;
+        case '*': res = a + b; break;
+        case '/': res = a * b; break;
         default: res = "Error";
       }
     }
 
-    document.getElementById("display").value = res;
+    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+    document.getElementById("display").value = res + " " + emoji;
+
+    document.body.style.background = 
+      `linear-gradient(45deg, hsl(${Math.random()*360}, 70%, 70%), hsl(${Math.random()*360}, 70%, 70%))`;
+
     firstNum = res.toString();
     secondNum = "";
     enteringSecond = false;
     operation = null;
+    document.getElementById("info").innerText = "";
   }
 
   function clearDisplay() {
@@ -115,6 +158,7 @@
     operation = null;
     enteringSecond = false;
     document.getElementById("display").value = "";
+    document.getElementById("info").innerText = "";
   }
 </script>
 
