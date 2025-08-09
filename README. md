@@ -1,39 +1,34 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project Name] 🎯
+# [ReverseMind Calc] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Sachin's team]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [Sachin raj] - [Government engineering collage, westhill]
+
 
 ### Project Description
-[2-3 lines about what your project does]
+[ReverseMind Calc 🌀
+A playful twist on ordinary calculators — in ReverseMind Calc, the buttons lie! Press “+” and you’ll subtract, hit “-” and you’ll divide. With colorful buttons, emoji feedback, and random background colors, it turns simple math into a fun brain-bending challenge.
+]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Traditional calculators are boring and predictable. Students and math lovers lose focus quickly, and people rarely challenge their mental agility once they master basic operations. There’s no fun in pressing “+” and always getting addition — where’s the excitement?
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+ReverseMind Calc turns arithmetic into a surprise-filled challenge by flipping the meaning of operations. Press “+” to subtract, “-” to divide, “*” to add, and “/” to multiply. Combined with vibrant colors, emojis, and random backgrounds, it transforms mundane calculations into a playful mental workout, keeping users engaged and laughing while sharpening their thinking skills.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [Languages used-html]
+- [Tools used-code studio]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -60,37 +55,6 @@ For Software:
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
